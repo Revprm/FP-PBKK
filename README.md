@@ -5,7 +5,10 @@
 | Haikal Athallarik | 5025221232 |
 | Revy Pramana      | 5025221252 |
 
-## Build
+# Topic
+Our topic is making a simple E-Commerce app where users can register, login, add or delete products from the website
+
+# Build
 
 ```
 composer install
