@@ -12,5 +12,8 @@
     <div class="min-h-full">
         <x-navbar></x-navbar>
     </div>
+    <main>
+        {{$slot}}
+  </main>
 </body>
 </html>
