@@ -13,7 +13,7 @@
         <x-navbar></x-navbar>
     </div>
     <main>
-        {{$slot}}
+        {{ $slot }}
   </main>
 </body>
 </html>

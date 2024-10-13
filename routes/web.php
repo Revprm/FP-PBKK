@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -15,7 +16,9 @@ Route::get('/register', function () {
 });
 
 Route::get('/information', function () {
-    return view('information');
+    return view('information', [
+        'products' => Product::all(),
+    ]);
 });
 
 Route::get('/information/details', function () {
