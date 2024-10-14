@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
@@ -32,3 +33,7 @@ Route::get('/information/details/{slug}', function ($slug) {
 Route::get('/information/add_page', function () {
     return view('add_page');
 });
+
+Route::get('/information/details/{slug}', [ProductController::class, 'show'])->name('products.show');
+
+Route::put('/information/details/{slug}', [ProductController::class, 'update'])->name('products.update');

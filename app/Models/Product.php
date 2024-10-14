@@ -11,9 +11,9 @@ class Product extends Model
     protected $fillable = [
         'name',
         'category_id',
-        'slug',
         'description',
         'price',
+        'weight',
     ];
 
     use HasFactory;
