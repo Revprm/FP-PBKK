@@ -33,6 +33,19 @@ class ProductController extends Controller
 
         return redirect()->route('products.show', $product->slug)->with('success', 'Product updated successfully');
     }
+
+    public function destroy($slug)
+    {
+        $product = Product::where('slug', $slug)->firstOrFail();
+
+        if (!$product) {
+            return redirect()->back()->with('error', 'Product not found.');
+        }
+
+        $product->delete();
+
+        return redirect()->route('information')->with('success', 'Product deleted successfully.');
+    }
     
     public function show($slug)
     {

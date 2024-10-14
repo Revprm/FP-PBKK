@@ -6,21 +6,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
-
-Route::get('/login', function () {
-    return view('login');
-});
-
-Route::get('/register', function () {
-    return view('register');
-});
+})->name('home');
 
 Route::get('/information', function () {
     return view('information', [
         'products' => Product::all(),
     ]);
-});
+})->name('information');
 
 Route::get('/information/details/{slug}', function ($slug) {
     $product = Product::where('slug', $slug)->firstOrFail();
@@ -37,3 +29,5 @@ Route::get('/information/add_page', function () {
 Route::get('/information/details/{slug}', [ProductController::class, 'show'])->name('products.show');
 
 Route::put('/information/details/{slug}', [ProductController::class, 'update'])->name('products.update');
+
+Route::delete('/information/details/{slug}', [ProductController::class, 'destroy'])->name('products.destroy');

@@ -1,7 +1,9 @@
 <x-layout>
     <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
-            <a href="/information" class="font-medium text-xm text-blue-500 hover:underline">&laquo; Back to Information Page</a>
+            <div class="py-2">
+                <a href="/information" class="font-medium text-xm text-blue-500 hover:underline">&laquo; Back to Information Page</a>
+            </div>
             <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add a new product</h2>
             <form action="#">
                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
