@@ -23,7 +23,7 @@
                   </button>
               </div>
           </div>
-
+          {{ $products->links() }}
           <!-- Loop through products -->
           <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5"> <!-- The grid wrapper for all products -->
               @foreach ($products as $product)

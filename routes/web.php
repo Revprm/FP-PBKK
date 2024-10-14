@@ -10,7 +10,7 @@ Route::get('/', function () {
 
 Route::get('/information', function () {
     return view('information', [
-        'products' => Product::all(),
+        'products' => Product::paginate(3), // Paginate with 10 products per page
     ]);
 })->name('information');
 
@@ -25,6 +25,8 @@ Route::get('/information/details/{slug}', function ($slug) {
 Route::get('/information/add_page', function () {
     return view('add_page');
 });
+
+Route::post('/information/store', [ProductController::class, 'store'])->name('products.store');
 
 Route::get('/information/details/{slug}', [ProductController::class, 'show'])->name('products.show');
 
