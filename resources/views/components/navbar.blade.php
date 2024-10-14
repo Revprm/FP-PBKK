@@ -20,27 +20,9 @@
                         </a>
                     </li>
                     <li class="shrink-0">
-                        <a href="#" title=""
+                        <a href="/information" title=""
                             class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
-                            Best Sellers
-                        </a>
-                    </li>
-                    <li class="shrink-0">
-                        <a href="#" title=""
-                            class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
-                            Gift Ideas
-                        </a>
-                    </li>
-                    <li class="shrink-0">
-                        <a href="#" title=""
-                            class="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
-                            Today's Deals
-                        </a>
-                    </li>
-                    <li class="shrink-0">
-                        <a href="#" title=""
-                            class="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
-                            Sell
+                            Products
                         </a>
                     </li>
                 </ul>

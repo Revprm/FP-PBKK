@@ -21,14 +21,14 @@ Route::get('/information', function () {
     ]);
 });
 
-Route::get('/information/details', function () {
-    return view('details');
+Route::get('/information/details/{slug}', function ($slug) {
+    $product = Product::where('slug', $slug)->firstOrFail();
+    
+    return view('details', [
+        'product' => $product,
+    ]);
 });
 
 Route::get('/information/add_page', function () {
     return view('add_page');
-});
-
-Route::get('/information/details/edit', function () {
-    return view('details');
 });

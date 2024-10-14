@@ -24,6 +24,7 @@ class ProductFactory extends Factory
             'slug' => Str::slug(fake()->sentence()),
             'description' => fake()->text(),
             'price' => fake()->randomFloat(2, 1, 100),
+            'weight' => fake()->randomFloat(2, 1, 20),
         ];
     }
 }
