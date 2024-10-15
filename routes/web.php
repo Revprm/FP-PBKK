@@ -14,7 +14,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
         $products = Product::where('user_id', Auth::id())->paginate(10);
         return view('dashboard', compact('products'));
-    })->name('dashboard');
+    })->name('dashboard');  
 
     Route::get('/information', function () {
         return view('information', [
@@ -46,10 +46,6 @@ Route::get('/information/details/{slug}', function ($slug) {
     return view('details', [
         'product' => $product,
     ]);
-});
-
-Route::get('/information/add_page', function () {
-    return view('add_page');
 });
 
 Route::get('/login', function () {
