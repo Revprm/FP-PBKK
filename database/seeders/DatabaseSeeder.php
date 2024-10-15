@@ -19,8 +19,10 @@ class DatabaseSeeder extends Seeder
 
         $this->call(CategorySeeder::class);
 
-        Product::factory(10)->recycle([
-            Category::all(),
-        ])->create();
+        Category::all();
+
+        // Product::factory(10)->recycle([
+        //     Category::all(),
+        // ])->create();
     }
 }

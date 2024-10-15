@@ -17,15 +17,10 @@
                   </nav>
                   <h2 class="mt-3 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">Electronics</h2>
               </div>
-              <div class="flex items-start justify-between rounded-t md:p-5">
-                  <button type="button" class="ml-auto inline-flex items-center rounded-lg bg-green-700 p-2 text-sm text-white hover:bg-green-600" data-modal-toggle="filterModal" onclick="window.location.href='information/add_page';">
-                      + Add Product
-                  </button>
-              </div>
           </div>
           {{ $products->links() }}
           <!-- Loop through products -->
-          <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5"> <!-- The grid wrapper for all products -->
+          <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 py-4"> <!-- The grid wrapper for all products -->
               @foreach ($products as $product)
                   <div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
                       <div class="h-56 w-full">

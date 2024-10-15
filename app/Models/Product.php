@@ -18,10 +18,16 @@ class Product extends Model
 
     use HasFactory;
 
-    protected $with = ['category'];
+    protected $with = ['category', 'user'];
 
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }
