@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Product;
 use Illuminate\Support\ServiceProvider;
 use App\Policies\ProductPolicy;
+use Illuminate\Database\Eloquent\Model;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Model::preventLazyLoading();
     }
 
     protected $policies = [
