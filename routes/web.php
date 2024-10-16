@@ -12,12 +12,13 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
-        $products = Product::where('user_id', Auth::id())->paginate(5);
+        // Eager load the 'category' and 'user' relationships if applicable
+        $products = Product::with(['category', 'user'])->where('user_id', Auth::id())->paginate(5);
         return view('dashboard', compact('products'));
     })->name('dashboard');
 
     Route::get('/information', function () {
-        $productQuery = Product::latest();
+        $productQuery = Product::with(['category', 'user'])->latest(); // Eager load relationships
     
         if (request('search')) {
             $productQuery->where('name', 'like', '%' . request('search') . '%');
@@ -39,7 +40,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard/details/{slug}', [ProductController::class, 'show'])->name('products.show');
 
     Route::put('/dashboard/details/{slug}', [ProductController::class, 'update'], function ($slug) {
-        $product = Product::where('slug', $slug)->firstOrFail();
+        // Eager load relationships when fetching the product by slug
+        $product = Product::with(['category', 'user'])->where('slug', $slug)->firstOrFail();
         return view('details', [
             'product' => $product,
         ]);
@@ -49,7 +51,8 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/information/details/{slug}', function ($slug) {
-    $product = Product::where('slug', $slug)->firstOrFail();
+    // Eager load relationships when fetching the product by slug
+    $product = Product::with(['category', 'user'])->where('slug', $slug)->firstOrFail();
 
     return view('details', [
         'product' => $product,
@@ -72,3 +75,4 @@ Route::post('/logout', function () {
 Route::post('/register', [AuthController::class, 'register'])->name('register.store');
 
 Route::post('/login', [AuthController::class, 'login'])->name('login.store');
+
