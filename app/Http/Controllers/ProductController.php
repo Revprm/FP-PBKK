@@ -15,7 +15,7 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'price' => 'required|numeric',
-            'weight' => 'required|numeric',
+            'rate' => 'required|numeric',
             'category_id' => 'required|integer',
             'description' => 'required|string',
         ]);
@@ -25,7 +25,7 @@ class ProductController extends Controller
         $product = new Product();
         $product->name = $request->input('name');
         $product->price = $request->input('price');
-        $product->weight = $request->input('weight');
+        $product->rate = $request->input('rate');
         $product->user_id = $request->input('user_id');
         $product->category_id = $request->input('category_id');
         $product->description = $request->input('description');
@@ -51,7 +51,7 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'price' => 'required|numeric',
-            'weight' => 'required|numeric',
+            'rate' => 'required|numeric',
             'category_id' => 'required|integer',
             'description' => 'nullable|string',
         ]);
@@ -59,7 +59,7 @@ class ProductController extends Controller
         $product->name = $request->input('name');
         $product->price = $request->input('price');
         $product->category_id = $request->input('category_id');
-        $product->weight = $request->input('weight');
+        $product->rate = $request->input('rate');
         $product->description = $request->input('description');       
         
         $product->save();

@@ -10,7 +10,7 @@
                 </a>
             </div>
             <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup">
+                <img src="https://assets-a1.kompasiana.com/items/album/2023/06/26/bp-6499c37a08a8b50cf3757502.jpg" alt="mockup">
             </div>                
         </div>
     </section>

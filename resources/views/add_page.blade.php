@@ -37,17 +37,16 @@
                         <select name="category_id" id="category"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                             <option value="1">TV/Monitors</option>
-                            <option value="2">PC</option>
+                            <option value="2">PC/Laptop</option>
                             <option value="3">Gaming/Console</option>
                             <option value="4">Phones</option>
                         </select>
                     </div>
                     <div>
-                        <label for="weight" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Item
-                            Weight (kg)</label>
-                        <input type="number" name="weight" id="weight"
+                        <label for="rate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rating Product /10</label>
+                        <input type="number" name="rate" id="rate"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600"
-                            placeholder="12" required="">
+                            placeholder="1-10" required="">
                     </div>
                     <div class="sm:col-span-2">
                         <label for="description"

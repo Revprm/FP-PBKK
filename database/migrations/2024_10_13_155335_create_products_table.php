@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->text('description');
             $table->float('price');
-            $table->float('weight');
+            $table->float('rate');
             $table->timestamps();
         });
     }

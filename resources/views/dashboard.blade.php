@@ -30,7 +30,7 @@
                                                 Price</th>
                                             <th
                                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                Weight</th>
+                                                Rating</th>
                                             <th
                                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                 Category</th>
@@ -45,10 +45,10 @@
                                     <tbody class="bg-white divide-y divide-gray-200">
                                         @foreach ($products as $product)
                                             <tr>
-                                                <td class="px-6 py-4 whitespace-nowrap">{{ $product->name }}</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">{{ Str::words($product->name, 5) }}</td>
                                                 <td class="px-6 py-4 whitespace-nowrap">
                                                     ${{ number_format($product->price, 2) }}</td>
-                                                <td class="px-6 py-4 whitespace-nowrap">{{ $product->weight }}Kg</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">{{ $product->rate }}/10</td>
                                                 <td class="px-6 py-4 whitespace-nowrap">{{ $product->category->name }}
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap">
@@ -130,7 +130,7 @@
                                                                             TV/Monitors</option>
                                                                         <option value="2"
                                                                             {{ $product->category_id == 2 ? 'selected' : '' }}>
-                                                                            PC</option>
+                                                                            PC/Laptop</option>
                                                                         <option value="3"
                                                                             {{ $product->category_id == 3 ? 'selected' : '' }}>
                                                                             Gaming/Console</option>
@@ -151,11 +151,11 @@
                                                                 </div>
 
                                                                 <div>
-                                                                    <label for="weight{{ $product->id }}"
-                                                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Weight</label>
-                                                                    <input type="text" name="weight"
-                                                                        id="weight{{ $product->id }}"
-                                                                        value="{{ number_format($product->weight, 2) }}"
+                                                                    <label for="rate{{ $product->id }}"
+                                                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rating</label>
+                                                                    <input type="text" name="rate"
+                                                                        id="rate{{ $product->id }}"
+                                                                        value="{{ number_format($product->rate, 2) }}"
                                                                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
                                                                         required>
                                                                 </div>
@@ -240,8 +240,4 @@
             </div>
         </div>
     </div>
-
-
-
-
 </x-layout>

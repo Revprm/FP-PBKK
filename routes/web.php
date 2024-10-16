@@ -17,8 +17,16 @@ Route::middleware(['auth'])->group(function () {
     })->name('dashboard');
 
     Route::get('/information', function () {
+        $productQuery = Product::latest();
+    
+        if (request('search')) {
+            $productQuery->where('name', 'like', '%' . request('search') . '%');
+        }
+
+        $products = $productQuery->paginate(5);
+    
         return view('information', [
-            'products' => Product::paginate(5),
+            'products' => $products,
         ]);
     })->name('information');
 
