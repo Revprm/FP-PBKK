@@ -64,7 +64,7 @@ class ProductController extends Controller
         
         $product->save();
 
-        return redirect()->route('products.show', $product->slug)->with('success', 'Product updated successfully');
+        return redirect()->route('dashboard', $product->slug)->with('success', 'Product updated successfully');
     }
 
     public function destroy($slug)

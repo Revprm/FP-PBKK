@@ -14,7 +14,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
         $products = Product::where('user_id', Auth::id())->paginate(5);
         return view('dashboard', compact('products'));
-    })->name('dashboard');  
+    })->name('dashboard');
 
     Route::get('/information', function () {
         return view('information', [
