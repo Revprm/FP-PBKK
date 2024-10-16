@@ -3,9 +3,9 @@
         <div class="flex items-center justify-between">
             <div class="flex items-center space-x-8">
                 <div class="shrink-0">
-                    <a href="#" title="">
+                    <a href="/" title="">
                         <img class="block w-auto h-8 dark:hidden"
-                            src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full.svg" alt="">
+                            src="https://img.icons8.com/?size=100&id=baTWeZAqG8lF&format=png&color=000000" alt="">
                         <img class="hidden w-auto h-8 dark:block"
                             src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full-dark.svg" alt="">
                     </a>

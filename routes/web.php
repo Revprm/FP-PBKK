@@ -12,13 +12,13 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
-        $products = Product::where('user_id', Auth::id())->paginate(10);
+        $products = Product::where('user_id', Auth::id())->paginate(5);
         return view('dashboard', compact('products'));
     })->name('dashboard');  
 
     Route::get('/information', function () {
         return view('information', [
-            'products' => Product::paginate(10),
+            'products' => Product::paginate(5),
         ]);
     })->name('information');
 
