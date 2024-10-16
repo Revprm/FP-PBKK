@@ -8,6 +8,9 @@
 # Topic
 Our topic is making a simple E-Commerce app where users can Add, Update or delete products from the website
 
+# Link Youtube
+https://youtu.be/cpS3G85NwK4
+
 # Build
 
 ```
